@@ -90,7 +90,31 @@ essential: true // This animation is considered essential with
 //respect to prefers-reduced-motion
 });
 });
+	
+const geocoder = new MapboxGeocoder({
+accessToken: mapboxgl.accessToken,
+flyTo: {
+bearing: 0,
+// Control the flight curve, making it move slowly and
+// zoom out almost completely before starting to pan.
+speed: 0.2, // Make the flying slow.
+curve: 1, // Change the speed at which it zooms out.
+// This can be any easing function: it takes a number between
+// 0 and 1 and returns another number between 0 and 1.
+easing: function (t) {
+return t;
+}
+},
+mapboxgl: mapboxgl
+});
+ 
+// Add the geocoder to the map/
+map.addControl(geocoder);
 </script>
+	
+</script>
+
+
  
 </body>
 </html>
