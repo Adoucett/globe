@@ -17,7 +17,7 @@ body { margin: 0; padding: 0; }
 display: block;
 position: relative;
 margin: 0px auto;
-width: 50%;
+width: 30%;
 height: 30px;
 padding: 10px;
 border: none;
@@ -98,6 +98,7 @@ const geocoder = new MapboxGeocoder({
 accessToken: mapboxgl.accessToken,
 flyTo: {
 bearing: 0,
+pitch: 65,
 // Control the flight curve, making it move slowly and
 // zoom out almost completely before starting to pan.
 speed: 0.2, // Make the flying slow.
