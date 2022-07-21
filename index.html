@@ -75,7 +75,8 @@ map.addSource('mapbox-dem', {
  
 map.setTerrain({
 'source': 'mapbox-dem',
-'exaggeration': 1.3
+	// Here we will set a vertical exaggeration to emphaize the terrain 
+'exaggeration': 1.4
 });
 });
  
@@ -86,10 +87,12 @@ document.getElementById('fly').addEventListener('click', () => {
 // aim for point a or b
 const target = isAtStart ? end : start;
 isAtStart = !isAtStart;
- 
+
+	
+	//This is the Let's Fly function demo
 map.flyTo({
 ...target, // Fly to the selected target
-duration: 25000, // Animate over 12 seconds
+duration: 27000, // Animate over 12 seconds
 essential: true // This animation is considered essential with
 //respect to prefers-reduced-motion
 });
@@ -113,7 +116,7 @@ return t;
 mapboxgl: mapboxgl
 });
  
-// Add the geocoder to the map/
+// Adds the geocoder to the map/
 	
 map.addControl(geocoder);
 </script>
